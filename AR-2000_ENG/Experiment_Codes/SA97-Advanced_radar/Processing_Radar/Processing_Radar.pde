@@ -49,8 +49,8 @@ void serialEvent(Serial myPort) {
     angle = data.substring(0, input1);
     distance = data.substring(input1 + 1, data.length());
     
-    iangle = int(angle);
-    idistance = int(distance);
+    iangle = parseInt(angle);
+    idistance = parseInt(distance);
 }
 
 void drawRadar() {

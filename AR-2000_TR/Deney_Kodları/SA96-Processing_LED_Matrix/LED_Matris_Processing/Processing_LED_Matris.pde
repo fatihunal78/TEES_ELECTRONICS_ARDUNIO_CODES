@@ -1,4 +1,4 @@
-//S96 - Processing_LED_Matris
+//SA96 - Processing_LED_Matris
 
 import processing.serial.*;                                    //Processing ile arduino seri haberleşmesini başlat
 
@@ -50,7 +50,7 @@ void mouseReleased() {
     for (int col = 0; col < 8; col++) {
         for (int row = 7; row >= 0; row--) {
             if (grid[col][row] == color(255, 0, 0)) {
-                serialData[col] += pow(2, 7 - row);
+                serialData[col] += parseInt(pow(2, 7 - row)); // int tipine dönüştür
             }
         }
     }

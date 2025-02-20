@@ -48,7 +48,7 @@ void setup() {
 
 void serialEvent(Serial p) {
     DataIn = p.readString();
-    Jarak2 = int(trim(DataIn));
+    Jarak2 = parseInt(trim(DataIn));
     println(Jarak2);
     
     if (Jarak2 > 1 && Jarak2 < 100) {

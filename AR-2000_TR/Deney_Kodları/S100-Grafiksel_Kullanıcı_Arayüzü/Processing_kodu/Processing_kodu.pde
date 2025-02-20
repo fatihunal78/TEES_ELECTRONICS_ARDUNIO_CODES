@@ -43,15 +43,15 @@ void draw() {
     if (mousePressed && (mouseButton == LEFT)) {    // Eğer farenin sol tuşuna basılmış ise 
         bc = get(mouseX, mouseY);
         
-        println("R G B = " + int(red(bc)) + " " + int(green(bc)) + " " + int(blue(bc)));
+        println("R G B = " + parseInt(red(bc)) + " " + parseInt(green(bc)) + " " + parseInt(blue(bc)));
         
-        rgbdata[0] = (byte(int(red(bc))));
-        rgbdata[1] = (byte(int(green(bc))));
-        rgbdata[2] = (byte(int(blue(bc))));
+        rgbdata[0] = (byte(parseInt(red(bc))));
+        rgbdata[1] = (byte(parseInt(green(bc))));
+        rgbdata[2] = (byte(parseInt(blue(bc))));
         
-        data = int(red(bc));
-        data1 = int(green(bc));
-        data2 = int(blue(bc));
+        data = parseInt(red(bc));
+        data1 = parseInt(green(bc));
+        data2 = parseInt(blue(bc));
         
         println("R G B  data= " + data + " " + data1 + " " + data2);
 

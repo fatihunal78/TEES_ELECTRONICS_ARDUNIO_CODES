@@ -46,7 +46,7 @@ void setup() {
 
 void serialEvent(Serial p) {
     dataIn = p.readString();
-    distance2 = int(trim(dataIn));
+    distance2 = parseInt(trim(dataIn));
     println(distance2);
     if (distance2 > 1 && distance2 < 100) {
         distance1 = distance2;

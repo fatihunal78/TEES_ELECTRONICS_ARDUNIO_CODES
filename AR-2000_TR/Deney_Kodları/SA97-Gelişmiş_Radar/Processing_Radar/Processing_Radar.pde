@@ -1,4 +1,4 @@
-//S97 - Processing_Radar
+//SA97 - Processing_Radar
 
 
 import processing.serial.*;      //Seri haberleşmeyi başlat
@@ -49,8 +49,8 @@ void serialEvent(Serial myPort) {
     aci = veri.substring(0, girdi1);
     mesafe = veri.substring(girdi1+1, veri.length());
     
-    iaci = int(aci);
-    imesafe = int(mesafe);
+    iaci = parseInt(aci);
+    imesafe = parseInt(mesafe);
 }
 
 void drawRadar() {

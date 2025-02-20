@@ -122,8 +122,8 @@ void refresh() {
     strokeWeight(2);
     line(5, cursor_volt_1, lung-5, cursor_volt_1);
     line(5, cursor_volt_2, lung-5, cursor_volt_2);
-    cursor_volt_lv1 = int(map(cursor_volt_1, 0, lat, deflexie*70.5, -deflexie*70.5));
-    cursor_volt_lv2 = int(map(cursor_volt_2, 0, lat, deflexie*70.5, -deflexie*70.5));
+    cursor_volt_lv1 = parseInt(map(cursor_volt_1, 0, lat, deflexie*70.5, -deflexie*70.5));
+    cursor_volt_lv2 = parseInt(map(cursor_volt_2, 0, lat, deflexie*70.5, -deflexie*70.5));
     text("Cursor 1: " + cursor_volt_lv1 + "mV", 1020, 30);
     text("Cursor 2: " + cursor_volt_lv2 + "mV", 1020, 50);
     text("ΔV: " + abs(cursor_volt_lv1 - cursor_volt_lv2) + "mV", 1020, 70);
@@ -134,8 +134,8 @@ void refresh() {
     strokeWeight(2);
     line(cursor_time_1, 3, cursor_time_1, lat-3);
     line(cursor_time_2, 3, cursor_time_2, lat-3);
-    cursor_time_lv1 = int(map(cursor_time_1, 0, lung, 0, deflex_t*puncte));
-    cursor_time_lv2 = int(map(cursor_time_2, 0, lung, 0, deflex_t*puncte));
+    cursor_time_lv1 = parseInt(map(cursor_time_1, 0, lung, 0, deflex_t*puncte));
+    cursor_time_lv2 = parseInt(map(cursor_time_2, 0, lung, 0, deflex_t*puncte));
     text("Cursor 1: " + cursor_time_lv1 + "us", 1020, 530);
     text("Cursor 2: " + cursor_time_lv2 + "us", 1020, 550);
     text("Δt: " + abs(cursor_time_lv1 - cursor_time_lv2) + "us", 1020, 570);

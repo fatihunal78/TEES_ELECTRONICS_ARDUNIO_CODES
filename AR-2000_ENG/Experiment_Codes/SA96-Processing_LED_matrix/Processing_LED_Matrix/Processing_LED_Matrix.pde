@@ -11,8 +11,8 @@ color[][] grid;
 
 void setup() {
     size(400, 400);                                 // Create a 400x400 LED matrix (width, height)
-    columns = width/LEDSize;                        // width value 400, LEDSize value 50, 400/50 = 8 columns
-    rows = height/LEDSize;                          // width value 400, LEDSize value 50, 400/50 = 8 rows
+    columns = width / LEDSize;                      // width value 400, LEDSize value 50, 400/50 = 8 columns
+    rows = height / LEDSize;                        // width value 400, LEDSize value 50, 400/50 = 8 rows
     grid = new color[columns][rows];
 
     // Initialize columns and rows as white at the start
@@ -53,7 +53,7 @@ void mouseReleased() {
     for (int col = 0; col < 8; col++) {
         for (int row = 7; row >= 0; row--) {
             if (grid[col][row] == color(255, 0, 0)) {
-                serialData[col] += pow(2, 7 - row);
+                serialData[col] += parseInt(pow(2, 7 - row)); // Ensure casting to int
             }
         }
     }
