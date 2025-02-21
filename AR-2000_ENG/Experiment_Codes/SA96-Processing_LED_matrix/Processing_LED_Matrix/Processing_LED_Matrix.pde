@@ -2,7 +2,7 @@
 
 import processing.serial.*;                          // Start serial communication between Processing and Arduino
 
-Serial serialPort;
+Serial serialPort = new Serial(this, "COM5", 9600);  //Create an object named serialPort and define the COM port and baud rate
 
 int LEDSize = 50;
 int columns, rows;

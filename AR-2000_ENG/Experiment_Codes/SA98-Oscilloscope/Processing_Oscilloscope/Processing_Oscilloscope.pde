@@ -36,8 +36,8 @@ void setup() {
   fill(250, 250, 0);
   textSize(18);
   textAlign(LEFT);
-  text("TEES ELEKTRONİK", 1100, 670);
-  text("ARDUINO OSİLOSKOP", 1100, 690);
+  text("TEES ELECTRONICS", 1100, 670);
+  text("ARDUINO OSCILLOSCOPE", 1100, 690);
 }
 
 void draw() {

@@ -61,24 +61,24 @@ void butts_place() {
   time_base = new Cursor(10, lat+80, 20, lat+80, 10, lat+80);
 
   volt_cursor_butt = new Button("Volt Cursor", 1150, 40.0, 100.0, 30.0, 200, 200, 0);
-  gnd_level_butt = new Button("GND Seviye", 1150, 90.0, 100.0, 30.0, 200, 200, 0);
-  average_butt = new Button("Ortalama", 1150, 140.0, 100.0, 30.0, 200, 200, 0);
+  gnd_level_butt = new Button("GND Level", 1150, 90.0, 100.0, 30.0, 200, 200, 0);
+  average_butt = new Button("Average", 1150, 140.0, 100.0, 30.0, 200, 200, 0);
   min_butt = new Button("Min", 1150, 190.0, 100.0, 30.0, 200, 200, 0);
   max_butt = new Button("Max", 1150, 240.0, 100.0, 30.0, 200, 200, 0);
   pk_pk_butt = new Button("Pk-Pk", 1150, 290.0, 100.0, 30.0, 200, 200, 0);
 
-  setings_butt = new Button("Ayarlar", 1150, 30.0, 90.0, 30.0, 200, 200, 0);
-  display_butt = new Button("Ekran", 1150, 80.0, 90.0, 30.0, 200, 200, 0);
+  setings_butt = new Button("Settings", 1150, 30.0, 90.0, 30.0, 200, 200, 0);
+  display_butt = new Button("Display", 1150, 80.0, 90.0, 30.0, 200, 200, 0);
 
   single_trigg_butt = new Button("Single", 1200.0, 180.0, 80.0, 30.0, 200, 200, 0);
   norm_trigg_butt = new Button("Normal", 1110.0, 180.0, 80.0, 30.0, 200, 200, 0);
 
-  line_butt = new Button("Çizgisel", 1200.0, 190.0, 80.0, 30.0, 200, 200, 0);
-  dot_butt = new Button("Noktasal", 1110.0, 190.0, 80.0, 30.0, 200, 200, 0);
+  line_butt = new Button("Line", 1200.0, 190.0, 80.0, 30.0, 200, 200, 0);
+  dot_butt = new Button("Dot", 1110.0, 190.0, 80.0, 30.0, 200, 200, 0);
 
-  pEdge_butt = new Button("Pos Tetik", 1110.0, 130.0, 80.0, 30.0, 200, 200, 0);
-  persist_butt = new Button("Doğrusal", 1150, 140.0, 90.0, 30.0, 200, 200, 0);
-  nEdge_butt = new Button("Neg Tetik", 1200.0, 130.0, 80.0, 30.0, 200, 200, 0);
+  pEdge_butt = new Button("Pos. Trigger", 1110.0, 130.0, 80.0, 30.0, 200, 200, 0);
+  persist_butt = new Button("Persist", 1150, 140.0, 90.0, 30.0, 200, 200, 0);
+  nEdge_butt = new Button("Neg. Trigger", 1200.0, 130.0, 80.0, 30.0, 200, 200, 0);
 
   m100_butt = new Button("100m", 1110.0, 250.0, 80.0, 30.0, 200, 200, 0);
   m200_butt = new Button("200m", 1110.0, 300.0, 80.0, 30.0, 200, 200, 0);
@@ -91,11 +91,11 @@ void butts_place() {
  // dc_butt = new Button("DC", 1110.0, 470.0, 80.0, 30.0, 200, 200, 0);
   //gnd_butt = new Button("GND", 1110.0, 520.0, 80.0, 30.0, 200, 200, 0);
 
-  volt_measure_butt = new Button("Y ölçümü", 1150.0, 570.0, 90.0, 30.0, 200, 200, 0);
+  volt_measure_butt = new Button("Y measure", 1150.0, 570.0, 90.0, 30.0, 200, 200, 0);
 
-  time_cursor_butt = new Button("Zaman Cursor", 30.0, 620.0, 110.0, 30.0, 200, 200, 0);
-  freq_butt = new Button("Frekans", 150.0, 620.0, 110.0, 30.0, 200, 200, 0);
-  period_butt = new Button("Periyot", 270.0, 620.0, 110.0, 30.0, 200, 200, 0);
+  time_cursor_butt = new Button("Time Cursor", 30.0, 620.0, 110.0, 30.0, 200, 200, 0);
+  freq_butt = new Button("Frequency", 150.0, 620.0, 110.0, 30.0, 200, 200, 0);
+  period_butt = new Button("Period", 270.0, 620.0, 110.0, 30.0, 200, 200, 0);
 
   u1_butt = new Button("1us", 30.0, 620.0, 50.0, 30.0, 200, 200, 0);
   u2_butt = new Button("2us", 100.0, 620.0, 50.0, 30.0, 200, 200, 0);
@@ -108,7 +108,7 @@ void butts_place() {
   u500_butt = new Button("500us", 590.0, 620.0, 50.0, 30.0, 200, 200, 0);
   m1_butt = new Button("1ms", 660.0, 620.0, 50.0, 30.0, 200, 200, 0);
 
-  time_measure_butt = new Button("X Ölçümü", 1010.0, 620.0, 90.0, 30.0, 200, 200, 0);
+  time_measure_butt = new Button("X measure", 1010.0, 620.0, 90.0, 30.0, 200, 200, 0);
 }
 
 //AFISARE MENIU PRINCIPAL
