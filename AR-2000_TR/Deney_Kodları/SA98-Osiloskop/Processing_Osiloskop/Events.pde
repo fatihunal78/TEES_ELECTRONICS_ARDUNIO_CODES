@@ -486,7 +486,7 @@ void mousePressed() {
 
 void mouseWheel(MouseEvent event) {
 
-  float e = event.getAmount();
+  float e = event.getCount();
 
   if (offset > - 295 && offset < 295) {
     if (e>0) {
