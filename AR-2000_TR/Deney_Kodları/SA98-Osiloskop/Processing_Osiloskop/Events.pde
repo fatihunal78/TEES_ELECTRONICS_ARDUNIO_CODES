@@ -521,8 +521,8 @@ void mouseDragged() {
 
   if (mouseX < lung) {
     if (over_trig_lv) {
-      trig_lv.move = int(map(mouseY, 0, 600, -300, 300));
-      trig_pos = int(map(mouseY, 0, 600, 1024, 0));
+      trig_lv.move = parseInt(map(mouseY, 0, 600, -300, 300));
+      trig_pos = parseInt(map(mouseY, 0, 600, 1024, 0));
 
       // port.write("P"+trig_pos);
     }

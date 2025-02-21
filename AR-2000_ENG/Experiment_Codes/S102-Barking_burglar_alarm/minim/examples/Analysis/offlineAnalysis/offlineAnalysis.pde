@@ -104,7 +104,7 @@ void analyzeUsingAudioRecordingStream()
   MultiChannelBuffer buffer = new MultiChannelBuffer(fftSize, stream.getFormat().getChannels());
   
   // figure out how many samples are in the stream so we can allocate the correct number of spectra
-  int totalSamples = int( (stream.getMillisecondLength() / 1000.0) * stream.getFormat().getSampleRate() );
+  int totalSamples = parseInt( (stream.getMillisecondLength() / 1000.0) * stream.getFormat().getSampleRate() );
   
   // now we'll analyze the samples in chunks
   int totalChunks = (totalSamples / fftSize) + 1;

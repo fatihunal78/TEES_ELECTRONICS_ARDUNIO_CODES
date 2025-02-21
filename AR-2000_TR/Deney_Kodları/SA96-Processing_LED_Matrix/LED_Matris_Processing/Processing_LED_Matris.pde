@@ -2,7 +2,7 @@
 
 import processing.serial.*;                                    //Processing ile arduino seri haberleşmesini başlat
 
-Serial serialPort = new Serial(this, Serial.list()[0], 9600); //serialPort isimli bir obje oluştur
+Serial serialPort = new Serial(this, "COM5", 9600);    //serialPort isimli bir obje oluştur.
 
 int ledBoyutu = 50;
 int sutun, satir;

@@ -46,7 +46,7 @@ void draw()
 void keyPressed()
 {
   String keystr = String.valueOf(key);
-  int num = int(keystr);
+  int num = parseInt(keystr);
   if ( num > 0 && num < 10 )
   {
     groove.loop(num);

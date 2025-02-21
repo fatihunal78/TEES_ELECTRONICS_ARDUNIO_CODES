@@ -50,7 +50,7 @@ void setup()
     // but in general you'd want to iterate over all channels when doing something like this
     for( int s = 0; s < originalBufferSize; ++s )
     {
-      int   delayIndex  = s + int( random( 0, originalBufferSize ) );
+      int   delayIndex  = s + parseInt( random( 0, originalBufferSize ) );
       float sampleValue = sampleBuffer.getSample( 0, s );
       float destValue   = sampleBuffer.getSample( 0, delayIndex ); 
       sampleBuffer.setSample( 0, // channel

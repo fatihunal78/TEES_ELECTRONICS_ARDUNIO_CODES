@@ -2,7 +2,7 @@
 
 import processing.serial.*;                          // Start serial communication between Processing and Arduino
 
-Serial serialPort = new Serial(this, Serial.list()[0], 9600);    // Create an object named serialPort
+Serial serialPort;
 
 int LEDSize = 50;
 int columns, rows;
@@ -11,6 +11,7 @@ color[][] grid;
 
 void setup() {
     size(400, 400);                                 // Create a 400x400 LED matrix (width, height)
+    
     columns = width / LEDSize;                      // width value 400, LEDSize value 50, 400/50 = 8 columns
     rows = height / LEDSize;                        // width value 400, LEDSize value 50, 400/50 = 8 rows
     grid = new color[columns][rows];

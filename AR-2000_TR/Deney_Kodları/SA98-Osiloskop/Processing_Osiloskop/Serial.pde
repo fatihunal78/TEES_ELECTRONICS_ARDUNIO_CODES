@@ -6,13 +6,13 @@ void serialEvent (Serial port)
     println(data);
 
     //if (data.startsWith("*")) {
-    //  ch = int(data.substring(data.indexOf("*") + 1, data.indexOf(":") ).trim());
-    //  rezolution = int(data.substring(data.indexOf(":") + 1, data.indexOf(">") ).trim());
+    //  ch = parseInt(data.substring(data.indexOf("*") + 1, data.indexOf(":") ).trim());
+    //  rezolution = parseInt(data.substring(data.indexOf(":") + 1, data.indexOf(">") ).trim());
     //  String info[] = data.split(">");
     //  String samples[] = info[1].split(",");
 
     //  for (int k = 0; k <256; k++) {
-    //    vector[k] = int(samples[k].trim());
+    //    vector[k] = parseInt(samples[k].trim());
     //    vector[k] = map(vector[k], 0, 1024, lat/2, 0);
     //  }
     //}
@@ -29,7 +29,7 @@ void serialEvent (Serial port)
       sum = 0;
 
       for (k = 0; k <dim; k++) {
-        vector[k] = int(samples[k].trim());
+        vector[k] = parseInt(samples[k].trim());
         sum = vector[k] + sum;
 
         if (vector[k] >= max_volt) {

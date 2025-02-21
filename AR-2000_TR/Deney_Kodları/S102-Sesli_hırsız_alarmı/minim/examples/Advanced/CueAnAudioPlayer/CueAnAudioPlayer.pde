@@ -48,6 +48,6 @@ void mousePressed()
 {
   // choose a position to cue to based on where the user clicked.
   // the length() method returns the length of recording in milliseconds.
-  int position = int( map( mouseX, 0, width, 0, groove.length() ) );
+  int position = parseInt( map( mouseX, 0, width, 0, groove.length() ) );
   groove.cue( position );
 }

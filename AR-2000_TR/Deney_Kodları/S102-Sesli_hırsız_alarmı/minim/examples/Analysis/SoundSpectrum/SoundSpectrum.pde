@@ -115,7 +115,7 @@ void draw()
     // since linear averages group equal numbers of adjacent frequency bands
     // we can simply precalculate how many pixel wide each average's 
     // rectangle should be.
-    int w = int( width/fftLin.avgSize() );
+    int w = parseInt( width/fftLin.avgSize() );
     for(int i = 0; i < fftLin.avgSize(); i++)
     {
       // if the mouse is inside the bounds of this average,

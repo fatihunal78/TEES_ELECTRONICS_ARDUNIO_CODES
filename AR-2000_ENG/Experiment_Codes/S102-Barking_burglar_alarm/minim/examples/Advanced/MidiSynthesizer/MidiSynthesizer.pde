@@ -58,7 +58,7 @@ class MidiSynth implements ddf.minim.ugens.Instrument
     // and then convert the note name to a Midi note value here.
     noteNumber = (int)Frequency.ofPitch(noteName).asMidiNote();
     // similarly, we specify velocity as a [0,1] volume and convert to [1,127] here.
-    noteVelocity = 1 + int(126*vel); 
+    noteVelocity = 1 + parseInt(126*vel); 
   }
   
   void noteOn( float dur )
