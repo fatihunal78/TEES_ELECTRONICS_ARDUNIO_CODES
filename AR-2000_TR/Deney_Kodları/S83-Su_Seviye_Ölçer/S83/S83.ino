@@ -42,10 +42,21 @@ void setup() {
     // devre kurulup yazılım yüklendikten sonra kabın derinliği ultrasonik sensör yardımı ile ölçülecek 
     // ve referansımız kabın derinliği olacaktır. 
  
-    mesafe_olc();                      // mesafe_olc() fonksiyonun çağır ve mesafeyi ölç
-    kap_derinlik = mesafe;             // mesafe_olc() fonksiyonunda mesafenin kaydedildiği mesafe 
-                                       // değişkenindeki uzunluğu kap_derinlik değişkenine kaydet
-    delay(1000);                       // 1 saniye bekle 
+    delay(1000);                        // Sensörün dengelenmesi için başlangıç gecikmesi ekle
+
+    // Doğru başlangıç derinlik ölçümü için birden fazla okuma yap
+    kap_derinlik = 0;
+    for(int i = 0; i < 5; i++) {
+        mesafe_olc();
+        kap_derinlik += mesafe;
+        delay(100);
+    }
+    kap_derinlik = kap_derinlik / 5;  // Ortalama derinliği hesapla
+    
+    // Kurulumun tamamlandığını göster
+    digitalWrite(YesilLed1, HIGH);
+    delay(500);
+    digitalWrite(YesilLed1, LOW);
 }
 
 void loop() {

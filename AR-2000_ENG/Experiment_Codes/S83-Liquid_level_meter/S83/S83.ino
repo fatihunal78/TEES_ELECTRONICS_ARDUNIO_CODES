@@ -42,15 +42,21 @@ void setup()
     pinMode(triggerPin, OUTPUT);        //Set the pin to which the trigger leg is connected as output 
     pinMode(echoPin, INPUT);            //Set the pin to which the echo leg is connected as input
 
-    //To measure the depth of the container to which the ultrasonic sensor is connected (the container in which 
-    //the water level will be measured). After the circuit is installed and the software is loaded, the depth 
-    //of the container will be measured with the help of an ultrasonic sensor. And our reference will be the 
-    //depth of the container. 
- 
-    measureDistance();                  //Call the measureDistance() function and measure the distance
-    container_depth = distance;         //Length of the distance variable in which the distance is stored in the 
-                                      //measureDistance() function. Save it to container_depth variable
-    delay(1000);                       //Wait for 1 second 
+    delay(1000);                        //Add initial delay to stabilize sensor
+
+    //Take multiple readings to ensure accurate initial depth measurement
+    container_depth = 0;
+    for(int i = 0; i < 5; i++) {
+        measureDistance();
+        container_depth += distance;
+        delay(100);
+    }
+    container_depth = container_depth / 5;  //Calculate average depth
+    
+    //Indicate setup completion
+    digitalWrite(GreenLED1, HIGH);
+    delay(500);
+    digitalWrite(GreenLED1, LOW);
 }
 
 void loop()

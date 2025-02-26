@@ -24,20 +24,21 @@ void loop() {
         buttonStatus++;                      //Increment the buttonStatus variable by one
     }
     if (buttonStatus > 2) {                  //if buttonStatus variable is greater than 2
-        buttonStatus = 1;                    //Set he buttonStatus variable to 1
+        buttonStatus = 0;                    //Set he buttonStatus variable to 0
     }
 
-    if (buttonStatus == 1) {    //If the value of the button variable is 1
+    if (buttonStatus == 0) {    //If the value of the button variable is 0
         for (int i = 0; i <= eeprom_register; i++) {    //Use a for loop to perform the save operation and increment the 
                                                         //variable i from zero to 1000 (eeprom_register value).
             digitalWrite(yellowLED, HIGH);    //Turn ON the yellow LED to indicate that recording has started
             digitalWrite(greenLED, LOW);      //Turn OFF the Green LED
 
             if (digitalRead(buttonPin) == HIGH) {    //If the Button is pressed during the recording process
-                buttonStatus = 2;                    //make the buttonStatus variable 2, end recording and proceed to repeat
+                buttonStatus = 1;                    //make the buttonStatus variable 1, end recording and proceed to repeat
                                                     //the play (playback)
                 record_duration = i;                 //When the button is pressed, transfer the value of the variable i to
                                                     //the record_duration variable
+                delay(200);
                 break;                              //End for loop, end recording
             }
 
@@ -51,16 +52,16 @@ void loop() {
             record_duration = i;      //Transfer the value of the variable i to the variable record_duration
             delay(10);               //Wait for 10ms
         }
-        buttonStatus = 2;    //Set the buttonStatus variable to 2 and go into repeat (playback) mode.
+        buttonStatus = 1;    //Set the buttonStatus variable to 1 and go into repeat (playback) mode.
     }
-    else {    //If the value of the buttonStatus is other than 1
+    else {    //If the value of the buttonStatus is other than 0
         digitalWrite(yellowLED, LOW);     //Turn OFF the Yellow LED
         digitalWrite(greenLED, HIGH);     //Turn ON the Green LED to indicate that it is in repeat (playback) mode.
 
         for (int i = 0; i <= record_duration; i++) {    //Use a for loop to repeat the process and increment the variable i
                                                         //by one from zero to the record duration (record_duration).
             if (digitalRead(buttonPin) == HIGH) {    //If the Button is pressed again
-                buttonStatus = 1;                    //Set the buttonStatus variable to 1 to switch to recording mode
+                buttonStatus = 0;                    //Set the buttonStatus variable to 0 to switch to recording mode
                 delay(200);
                 break;                              //End the for loop and stop the playback
             }

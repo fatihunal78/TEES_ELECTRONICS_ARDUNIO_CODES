@@ -36,7 +36,7 @@ void loop() {
             delay(100);                       //Reduced delay to make barking more responsive
             Serial.println(1);                //Send another trigger for continuous barking
             
-            if(digitalRead(buttonPin) == HIGH) {  //If the Alarm Reset Button is pressed
+            if(digitalRead(buttonPin) == LOW) {  //If the Alarm Reset Button is pressed
                 delay(500);                        //Wait for 500ms
                 Serial.println(0);                 //Send 0 to the serial screen to silence the Alarm music
                 digitalWrite(greenLEDPin, LOW);    //Turn OFF the Green LED
