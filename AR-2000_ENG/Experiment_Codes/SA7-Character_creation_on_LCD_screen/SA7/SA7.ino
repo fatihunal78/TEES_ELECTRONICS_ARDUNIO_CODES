@@ -12,6 +12,7 @@ uint8_t character2[8] = {0x0,0x4,0x8,0x1F,0x1F,0x8,0x4,0x0}; //left arrow charac
 uint8_t character3[8] = {0x0,0x4,0x2,0x1F,0x1F,0x2,0x4,0x0}; //right arrow character
 uint8_t character4[8] = {0x0,0xC,0x12,0x12,0xC,0x0,0x0,0x0}; //Character to show degree symbol
 uint8_t character5[8] = {0x0,0x0,0xA,0x1F,0x1F,0xE,0x4,0x0}; //heart character
+uint8_t character6[8] = {0x0,0x11,0xA,0x4,0xA,0x11,0xA,0x4}; //the character you have created on the website.
 
 void setup() {
     lcd.begin(); //Start the LCD
@@ -22,6 +23,7 @@ void setup() {
     lcd.createChar(3, character3); //Create right arrow and define it to address 3
     lcd.createChar(4, character4); //Create degree character and define it to address 4
     lcd.createChar(5, character5); //Create heart character and define it to address 5
+    lcd.createChar(6, character6); //Create X pattern character and define it to address 6
 }
 
 void loop() {

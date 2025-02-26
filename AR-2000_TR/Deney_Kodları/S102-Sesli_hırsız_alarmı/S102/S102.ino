@@ -31,9 +31,10 @@ void loop() {
             Serial.println(1);                   // Seri ekrana Alarm müziğinin çalması için 1 değerini gönder
             digitalWrite(yesilLedPin, LOW);      // Yeşil LED'i söndür
             digitalWrite(kirmiziLedPin, HIGH);   // Kırmızı LED'i yak
-            delay(250);                         // 250ms bekle
+            delay(100);                         // 100ms bekle
             digitalWrite(kirmiziLedPin, LOW);    // Kırmızı LED'i söndür
-            delay(250);                         // 250ms bekle
+            delay(100);                         // 100ms bekle
+            Serial.println(1);                   // Seri ekrana tekrar alarm müziği için 1 değerini gönder
 
             if (digitalRead(butonPin) == LOW) {  // Alarm resetleme butonuna basıldı ise
                 delay(500);                     // 500ms bekle

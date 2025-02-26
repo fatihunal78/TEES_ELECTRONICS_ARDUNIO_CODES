@@ -31,15 +31,16 @@ void loop() {
             Serial.println(1);                //Send value 1 to the serial screen to play Alarm music
             digitalWrite(greenLEDPin, LOW);   //Turn OFF the Green LED
             digitalWrite(redLEDPin, HIGH);    //Turn ON the Red LED
-            delay(250);                       //Wait for 250ms
+            delay(100);                       //Reduced delay to make barking more responsive
             digitalWrite(redLEDPin, LOW);     //Turn OFF the Red LED
-            delay(250);                       //Wait for 250ms
-
+            delay(100);                       //Reduced delay to make barking more responsive
+            Serial.println(1);                //Send another trigger for continuous barking
+            
             if(digitalRead(buttonPin) == HIGH) {  //If the Alarm Reset Button is pressed
-                delay(500);                       //Wait for 500ms
-                Serial.println(0);                //Send 0 to the serial screen to silence the Alarm music.
-                digitalWrite(greenLEDPin, LOW);   //Turn OFF the Green LED
-                break;                           //Exit infinite loop, disable the Alarm
+                delay(500);                        //Wait for 500ms
+                Serial.println(0);                 //Send 0 to the serial screen to silence the Alarm music
+                digitalWrite(greenLEDPin, LOW);    //Turn OFF the Green LED
+                break;                            //Exit infinite loop, disable the Alarm
             }
         }
         while(1) {  //Waiting in the loop while the Alarm is OFF

@@ -169,13 +169,13 @@ int TurkishMarchNoteTimes[] = {
 
 void jingleBellsPlayNotes(char note, int jingleBellsNoteTime) {
     char noteName[] = {'c', 'd', 'e', 'f', 'g', 'a', 'b', 'C'};
-    //Here the jingleBellsPlayNotes function is required to play the Jingle Bells song frequency values 
-    //corresponding to the notes (tones) are played in order
+    // Here the jingleBellsPlayNotes function is required to play the Jingle Bells song. Frequency values 
+    // corresponding to the notes (tones) are played in order.
     int tones[] = {1915, 1700, 1519, 1432, 1275, 1136, 1014, 956};
     
-    for(int i = 0; i < 8; i++) {
-        if(noteName[i] == note) {
-            for(long j = 0; j < jingleBellsNoteTime * 1300L; j += tones[i] * 2) {
+    for (int i = 0; i < 8; i++) {
+        if (noteName[i] == note) {
+            for (long j = 0; j < jingleBellsNoteTime * 1300L; j += tones[i] * 2) {
                 digitalWrite(speakerPin, HIGH);
                 delayMicroseconds(tones[i]);
                 digitalWrite(speakerPin, LOW);
@@ -261,7 +261,7 @@ void loop() {
                     delay(500);
                     break;
                 }
-                if(birthdayNotes[i] == ' ') {
+                if(birthdaySongNotes[i] == ' ') {
                     delay(birthdaySongStrokes[i] * birthdaySongTempo);
                 } else {
                     birthdayPlayNotes(birthdaySongNotes[i], birthdaySongStrokes[i] * birthdaySongTempo);

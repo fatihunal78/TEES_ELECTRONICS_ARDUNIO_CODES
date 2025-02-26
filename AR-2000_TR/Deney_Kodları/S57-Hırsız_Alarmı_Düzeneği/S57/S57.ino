@@ -1,6 +1,6 @@
 // S57 - Hırsız Alarmı Düzeneği
 
-int //kirmiziLedPin = 8;    // Kırmızı LED'in bağlandığı pini tanımla
+int kirmiziLedPin = 8;    // Kırmızı LED'in bağlandığı pini tanımla
 int yesilLedPin = 9;      // Yeşil LED'in bağlandığı pini tanımla
 
 int kapiPin = 3;          // Kapı kontağının bağlandığı pin numarasını tanımla
