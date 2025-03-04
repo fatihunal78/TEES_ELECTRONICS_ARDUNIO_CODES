@@ -181,7 +181,7 @@ void increaseRanking() {                               //Create increaseRanking(
         }
     }
 
-    rankingCheck();                                   //Call ranking_check() function 
+    rankingControl();                                   //Call rankingControl() function 
 }
 
 void createRanking() {                               //Create the createRanking() function 

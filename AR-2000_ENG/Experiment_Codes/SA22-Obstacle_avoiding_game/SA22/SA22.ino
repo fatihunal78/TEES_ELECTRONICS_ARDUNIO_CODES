@@ -99,8 +99,8 @@ void advanceTerrain(char* terrain, byte newTerrain) {
 }
 
 //Define the playNote function
-void playNote(int wait, int tone) {
-    tone(SPEAKER_PIN, tone);
+void playNote(int wait, int Tone) { 
+    tone(SPEAKER_PIN, Tone);
     delay(wait);
     noTone(SPEAKER_PIN);
 }

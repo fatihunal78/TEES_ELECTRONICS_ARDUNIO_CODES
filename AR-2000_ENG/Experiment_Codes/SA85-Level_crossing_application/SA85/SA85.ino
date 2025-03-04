@@ -30,24 +30,24 @@ void setup() {
 }
 
 void loop() {
-    measure_distance();                             //Call the measure_distance() function to measure the distance
+    measure_distance();                             
     digitalWrite(buzzerPin, LOW);
     
-    if(distance <= 5) {                            //If the distance is less than or equal to 5cm, that is, train is coming 
-        for(int i=90; i>=0; i--) {                 //Close the barrier to vehicles
+    if(distance <= 5) {                            //If train is detected
+        digitalWrite(green_LED, LOW);               // Turn off green LED immediately when train is detected
+        for(int i=90; i>=0; i--) {                 //Move servo motor from 90 to 0 degrees
             servo.write(i);
-            digitalWrite(green_LED, LOW);           //Turn OFF the Green LED 
             delay(30);
             newTime = millis();
             
             if(newTime - oldTime > 500) {
                 if(buzzerStatus == 0) {
                     digitalWrite(buzzerPin, HIGH);
-                    digitalWrite(red_LED, HIGH); 
+                    digitalWrite(red_LED, HIGH);     // Red LED control
                     buzzerStatus = 1;
                 } else {
                     digitalWrite(buzzerPin, LOW);
-                    digitalWrite(red_LED, LOW); 
+                    digitalWrite(red_LED, LOW);      // Red LED control
                     buzzerStatus = 0;
                 }
                 oldTime = newTime;
@@ -73,13 +73,13 @@ void loop() {
             delay(100);
         }
         
-        if(distance > 5) {                         //If the distance is greater than 5cm, that is, there is no train 
+        if(distance > 5) {                         //If train has passed
             digitalWrite(buzzerPin, LOW);
-            digitalWrite(red_LED, HIGH); 
+            digitalWrite(red_LED, LOW);             // Turn off red LED when train has passed
             delay(5000);
             
-            if(distance > 5) {                     //If the distance is greater than 5cm, that is, there is no train 
-                for(int i=0; i<=90; i++) {         //Open the barrier, allow the vehicles to pass 
+            if(distance > 5) {                     //Check again if train has passed
+                for(int i=0; i<=90; i++) {         //Move servo motor from 0 to 90 degrees
                     servo.write(i);
                     delay(30);
                     
@@ -87,10 +87,8 @@ void loop() {
                     if(newTime - oldTime > 500) {
                         if(buzzerStatus == 0) {
                             digitalWrite(yellow_LED, HIGH); 
-                            digitalWrite(red_LED, LOW);    //When the barrier is opened, turn OFF the Red LED
                             buzzerStatus = 1;
                         } else {
-                            digitalWrite(buzzerPin, LOW);
                             digitalWrite(yellow_LED, LOW); 
                             buzzerStatus = 0;
                         }
@@ -98,9 +96,9 @@ void loop() {
                     }
                 }
             }
-            digitalWrite(green_LED, HIGH);         //Turn ON the Green LED when the barrier is opened
-            digitalWrite(yellow_LED, LOW);         //Turn OFF the Yellow LED when the barrier is opened
-            digitalWrite(red_LED, HIGH);           //Turn OFF the Red LED when the barrier is opened
+            digitalWrite(green_LED, HIGH);          //Turn ON Green LED
+            digitalWrite(yellow_LED, LOW);          //Turn OFF Yellow LED
+            digitalWrite(red_LED, LOW);             // Ensure red LED is off when back to normal operation
         }
     }
 }

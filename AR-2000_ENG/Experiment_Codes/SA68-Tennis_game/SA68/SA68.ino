@@ -53,7 +53,7 @@ void setup() {
   
     lc.shutdown(0, false);
     lc.setIntensity(0, 3);         //Set LED Matrix display brightness to 3
-    myMatrix.clearDisplay(0);       //Clear the LED Matrix screen
+    lc.clearDisplay(0);       //Clear the LED Matrix screen
 
     lcd.setCursor(0, 0);           //Move cursor to the first row of the LCD display
     lcd.print("TEES ELECTRONICS"); //Write "TEES ELECTRONICS" on the LCD display

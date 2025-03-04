@@ -1,9 +1,9 @@
 //SA17 - Automobile right-left signal
 
 //Define the pin number to which the left signal LED is connected
-int leftSignalPin = 6;
+int leftSignalPin = 7;
 //Define the pin number to which the right signal LED is connected
-int rightSignalPin = 7;
+int rightSignalPin = 6;
 //Define the pin number to which the joystick X axis is connected
 int xPin = A5;
 //Define the pin number to which the Speaker is connected

@@ -3,9 +3,9 @@
 #include <MaxMatrix.h>                             //Add the LED Matrix library
 
 //Define LED Matrix connections
-int DIN = 4;                                       //Define DIN pin
-int CS = 3;                                        //Define CS pin
-int CLK = 2;                                       //Define CLK pin
+int DIN = 12;                                      //Define DIN pin (Changed to 12 to avoid pin conflicts)
+int CS = 11;                                       //Define CS pin (Changed to 11 to avoid pin conflicts)
+int CLK = 10;                                      //Define CLK pin (Changed to 10 to avoid pin conflicts)
 
 int LED_Matrix_Count = 1;                          //LED matrices can be connected in series
                                                   //If more than one matrix is to be connected, you can change the number here
@@ -14,7 +14,7 @@ MaxMatrix m(DIN, CS, CLK, LED_Matrix_Count);      //Define matrix m with matrix 
 char Car1[] = {8, 8, 0x04, 0x06, 0x0D, 0x05, 
                0x05, 0x0D, 0x06, 0x04};           //Graphics of the car on the top
 char Car2[] = {8, 8, 0x40, 0x60, 0xE0, 0x60, 
-               0xE0, 0x60, 0xE0, 0x60, 0x40};     //Graphics of the car at the below
+               0x60, 0xE0, 0x60, 0x40};           //Graphics of the car at the below
 
 int Sensor1Pin = 7;                               //Define the pin number to which Sensor1 is connected
 int Sensor2Pin = 6;                               //Define the pin number to which Sensor2 is connected
@@ -26,6 +26,7 @@ int green_LED2 = 2;                               //Define the pin number to whi
 void setup() {
     m.init();                                     //Start the LED matrix
     m.setIntensity(8);                           //Adjust brightness
+    m.clear();                                   //Clear the matrix display at startup (Added for clean initial state)
     pinMode(Sensor1Pin, INPUT);                  //Set the pin to which Sensor1 is connected as input 
     pinMode(Sensor2Pin, INPUT);                  //Set the pin to which Sensor2 is connected as input 
     
@@ -47,6 +48,7 @@ void loop() {
         digitalWrite(red_LED2, LOW);            //Turn OFF the Red LED2 (Red LED at the bottom)
     }
     else if(val1 == LOW && val2 == HIGH) {     //If there is no car at the bottom, and there is one at the top 
+        m.clear();                             //Clear the matrix before writing new sprite (Added to prevent ghosting)
         m.writeSprite(0, 0, Car2);             //Bring the image that shows the car at the top on the LED matrix 
         digitalWrite(green_LED1, HIGH);         //Turn ON the Green LED1
         digitalWrite(green_LED2, LOW);          //Turn OFF the Green LED2 
@@ -54,6 +56,7 @@ void loop() {
         digitalWrite(red_LED2, HIGH);           //Turn ON the Red LED2 
     }
     else if(val1 == HIGH && val2 == LOW) {     //If there is no car at the top, there is one at the bottom 
+        m.clear();                             //Clear the matrix before writing new sprite (Added to prevent ghosting)
         m.writeSprite(0, 0, Car1);             //Bring the image that shows the car at the bottom on the LED matrix 
         digitalWrite(green_LED1, LOW);          //Turn OFF the Green LED1
         digitalWrite(green_LED2, HIGH);         //Turn ON the Green LED2
@@ -61,6 +64,7 @@ void loop() {
         digitalWrite(red_LED2, LOW);            //Turn OFF the Red LED2 
     }
     else if(val1 == HIGH && val2 == HIGH) {    //If there is car both at the bottom and and on the top
+        m.clear();                             //Clear the matrix before writing new sprite (Added to prevent ghosting)
         m.writeSprite(0, 0, Car1);             //Display the image that shows the car at the bottom on the LED matrix
         m.writeSprite(0, 0, Car2);             //Display the image that shows the car on the top on the LED matrix 
         digitalWrite(green_LED1, LOW);          //Turn OFF the Green LED1

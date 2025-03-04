@@ -28,7 +28,7 @@ char pressedKey;                        //Define the variable to store the key p
 char Atomic_Number_char[4] = {};        //Define the variable to keep the atomic number as a character
 int Atomic_Number;                      //Define the variable that will keep the atomic number as an integer
 int i = 0;
-int loop = 1;
+int looping = 1;
 
 void setup() {
   lcd.begin();                          //Start the LCD display
@@ -48,7 +48,7 @@ void setup() {
 }
 
 void loop() {
-  if(loop == 1) {
+  if(looping == 1) {
     lcd.clear();
     while(1) {                          //Enter infinite loop 
       char pressedKey = key_pad.getKey();   //Save the key pressed from the keypad to the pressedKey character.
@@ -67,7 +67,7 @@ void loop() {
         if(pressedKey == '#') {             //If # is pressed, clear screen, reset variables and end infinite loop
           lcd.clear(); 
           i = 0; 
-          loop = 0; 
+          looping = 0; 
           break;
         }
       }
@@ -76,7 +76,7 @@ void loop() {
   
   lcd.clear();                              //Clear the LCD display 
   pressedKey = key_pad.getKey();            //Save the key pressed from the keypad to the pressedKey character
-  if(pressedKey == '*') { loop = 1; }       //If * key is pressed, make the loop variable 1 
+  if(pressedKey == '*') { looping = 1; }       //If * key is pressed, make the loop variable 1 
   
   //Perform the following operations according to the atomic number entered
   if(Atomic_Number == 0) { lcd.print("ATOMIC NUMBER > 0"); }

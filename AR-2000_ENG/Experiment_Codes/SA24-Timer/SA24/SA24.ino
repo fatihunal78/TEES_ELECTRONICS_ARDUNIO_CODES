@@ -1,5 +1,7 @@
-//Add IR receiver library
+//Add required libraries
 #include <IRremote.h>
+#include <Wire.h> 
+#include <LiquidCrystal_I2C.h>
 
 //Define IR control codes
 #define oneKey 0xFFA25D //IR Control key 1

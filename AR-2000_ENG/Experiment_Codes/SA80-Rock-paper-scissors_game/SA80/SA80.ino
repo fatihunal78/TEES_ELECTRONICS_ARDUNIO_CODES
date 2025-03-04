@@ -65,7 +65,7 @@ void loop() {
         }
     }
 
-    if(digitalRead(Second_Player_Button) == HIGH && counter == 2) { //If second player's turn and second player pressed button
+    if(digitalRead(Second_Player_Button) == LOW && counter == 2) { // Corrected condition
         lcd.clear();                            //Clear LCD display 
         for(int i=0; i<5; i++) {               //Repeat 5 times 
             secondValue = random(1, 4);         //Generate random number between 1 and 4 and save to secondValue variable
@@ -98,9 +98,9 @@ void result(int first, int second) {
     if(second == 2) { lcd.setCursor(11,0); lcd.print("Paper"); }
     if(second == 3) { lcd.setCursor(11,0); lcd.print("Scissors"); }
   
-    if(firstValue == secondValue) {             //If values of first and second players are equal (draw)
-        lcd.setCursor(0, 1);                    //Print "DRAW" at bottom row of LCD display
-        lcd.print("DRAW    ");
+    if(firstValue == secondValue) {
+        lcd.setCursor(0, 1);
+        lcd.print("DRAW            ");  // Added spaces
     }
     //If first player gets ROCK and second player gets PAPER - Second player wins
     else if(firstValue == 1 && secondValue == 2) {

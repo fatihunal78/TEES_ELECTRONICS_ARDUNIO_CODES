@@ -36,8 +36,7 @@ void loop() {
                 delay(30);                    //Delay for 30ms
             }
         }
-        
-        if(result.value == doorOpenClose && doorStatus == 1) {    //If the OK key of the remote controller is pressed and the door is open 
+        else if(result.value == doorOpenClose && doorStatus == 1) {    //Changed 'if' to 'else if' for better logic flow
             digitalWrite(buzzerPin, HIGH);    //Make a sound from the Buzzer 
             delay(50);                        //Wait for 50ms 
             digitalWrite(buzzerPin, LOW);     //Mute the Buzzer 

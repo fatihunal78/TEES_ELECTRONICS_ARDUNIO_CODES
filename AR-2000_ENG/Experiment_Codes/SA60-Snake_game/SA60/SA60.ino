@@ -71,13 +71,15 @@ void clear_screen() {
 bool advance() {
     int head[2] = {snake[0][0] + v[0], snake[0][1] + v[1]};
 
+    // Check X boundary
     if(head[0] < 0 || head[0] >= Size) {
         delay(1000);
         game_over_message();
         return true;
     }
 
-    if(head[0] < 0 || head[0] >= Size) {
+    // Check Y boundary
+    if(head[1] < 0 || head[1] >= Size) {
         delay(1000);
         game_over_message();
         return true;

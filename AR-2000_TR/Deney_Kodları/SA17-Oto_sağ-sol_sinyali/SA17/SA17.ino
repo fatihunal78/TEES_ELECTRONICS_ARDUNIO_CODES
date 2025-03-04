@@ -1,9 +1,9 @@
 // SA17 - Oto sağ-sol sinyali
 
 // Sol sinyal LED'inin bağlandığı pin numarasını tanımla
-int solSinyalPin  = 6;
+int solSinyalPin  = 7;
 // Sağ sinyal LED'inin bağlandığı pin numarasını tanımla
-int sagSinyalPin  = 7;
+int sagSinyalPin  = 6;
 // Joystick X ekseninin bağlandığı pin numarasını tanımla
 int xPin         = A5;
 // Hoparlörün bağlandığı pin numarasını tanımla

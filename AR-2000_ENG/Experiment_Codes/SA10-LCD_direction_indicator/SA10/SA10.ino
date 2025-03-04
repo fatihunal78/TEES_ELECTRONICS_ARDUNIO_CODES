@@ -47,7 +47,7 @@ void loop() {
 
     if(xPosition > 900 && yPosition > 120) { //If the direction is right, type Right on the LCD display and show -- >
         lcd.setCursor(0, 0);
-        lcd.print("Right    ");
+        lcd.print("Right  ");
         lcd.setCursor(12, 0);
         lcd.print(" ");
         lcd.setCursor(11, 1);
@@ -55,7 +55,7 @@ void loop() {
     }
     else if(xPosition < 120 && yPosition > 120) { //If the direction is left, type Left on the LCD display and show <--
         lcd.setCursor(0, 0);
-        lcd.print("Left    ");
+        lcd.print("Left   ");
         lcd.setCursor(12, 0);
         lcd.print(" ");
         lcd.setCursor(11, 1);
@@ -63,7 +63,7 @@ void loop() {
     }
     else if(xPosition > 120 && yPosition < 120) { //If the direction is forward, type Forward on the LCD display 
         lcd.setCursor(0, 0);
-        lcd.print("Forward  ");
+        lcd.print("Forward");
         lcd.setCursor(12, 0);
         lcd.write(byte(2));
         lcd.setCursor(11, 1);
@@ -71,7 +71,7 @@ void loop() {
     }
     else if(xPosition > 120 && yPosition > 900) { //If direction is backward, write Backward on the LCD display 
         lcd.setCursor(0, 0);
-        lcd.print("Backward  ");
+        lcd.print("Backward");
         lcd.setCursor(12, 0);
         lcd.print(" | ");
         lcd.setCursor(11, 1);
@@ -82,11 +82,11 @@ void loop() {
     else {
         if(buttonStatus == LOW) { //If the button is pressed, type "Button Pressed" on the LCD display.
             lcd.setCursor(0, 1);
-            lcd.print("Button Pressed");
+            lcd.print("Button Pressed  ");
         }
         else { //If the Button is not pressed and the Joystick is in the middle
             lcd.setCursor(0, 0);
-            lcd.print("Middle   ");
+            lcd.print("Middle ");
             lcd.setCursor(12, 0);
             lcd.print(" ");
             lcd.setCursor(0, 1);

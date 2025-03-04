@@ -16,7 +16,7 @@ int green_LED = 13;    //Define the pin to which the green LED is connected
 int red_LED = 12;      //Define the pin to which the red LED is connected
 
 int buttonStatus = 0;  //Define the variable that will store the information of which button is pressed
-int analogRead;        //Define the variable to store the value read from the Potentiometer
+int potValue;        //Define the variable to store the value read from the Potentiometer
 
 void setup() {
     pinMode(MotorPwm1, OUTPUT);         //Set the pin to which the INPUT4 (15th leg) of the LM293 is connected as output 
@@ -41,8 +41,8 @@ void loop() {
         digitalWrite(green_LED, HIGH);    //Turn ON the Green LED
     }
     
-    analogRead = analogRead(PotPin);
-    int proportion = map(analogRead, 0, 1023, 0, 150);
+    potValue = analogRead(PotPin);
+    int proportion = map(potValue, 0, 1023, 0, 150);
 
     if(buttonStatus == 1) {
         analogWrite(MotorPwm1, proportion);  //Energize pin 9 for clockwise rotation of the motor 
