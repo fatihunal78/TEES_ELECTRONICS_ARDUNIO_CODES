@@ -45,8 +45,8 @@ void loop() {
     int proportion = map(potValue, 0, 1023, 0, 255); 
 
     if(buttonStatus == 1) {                //If PB1 is pressed - clockwise rotation
-        analogWrite(MotorPwm2, 0);         //Pull pin 10 to ground
-        analogWrite(MotorPwm1, proportion); //Energize pin 9 for clockwise rotation
+        analogWrite(MotorPwm1, 0);         //Pull pin 9 to ground
+        analogWrite(MotorPwm2, proportion); //Energize pin 10 for clockwise rotation
         motorDirection = 1; 
         
         if(digitalRead(Joystick_button) == LOW) {
@@ -54,8 +54,8 @@ void loop() {
         }
     }
     else if(buttonStatus == 2) {           //If PB2 is pressed - counterclockwise rotation
-        analogWrite(MotorPwm2, proportion); //Energize pin 10 for counterclockwise rotation
-        analogWrite(MotorPwm1, 0);         //Pull pin 9 to ground
+        analogWrite(MotorPwm1, proportion); //Energize pin 9 for counterclockwise rotation
+        analogWrite(MotorPwm2, 0);         //Pull pin 10 to ground
         motorDirection = 2; 
         
         if(digitalRead(Joystick_button) == LOW) {

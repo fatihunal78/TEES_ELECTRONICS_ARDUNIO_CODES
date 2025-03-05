@@ -45,12 +45,12 @@ void loop() {
     int proportion = map(potValue, 0, 1023, 0, 150);
 
     if(buttonStatus == 1) {
-        analogWrite(MotorPwm2, 0);           //Pull pin 10 to ground for clockwise rotation
-        analogWrite(MotorPwm1, proportion);   //Energize pin 9
+        analogWrite(MotorPwm1, 0);           //Pull pin 9 to ground for clockwise rotation
+        analogWrite(MotorPwm2, proportion);   //Energize pin 10
     }
     else if(buttonStatus == 2) {       
-        analogWrite(MotorPwm2, proportion);   //Energize pin 10 for counterclockwise rotation
-        analogWrite(MotorPwm1, 0);           //Pull pin 9 to ground
+        analogWrite(MotorPwm1, proportion);   //Energize pin 9 for counterclockwise rotation
+        analogWrite(MotorPwm2, 0);           //Pull pin 10 to ground
     }
     else {                                   //Stop the Motor
         analogWrite(MotorPwm1, 0); 

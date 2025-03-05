@@ -46,8 +46,8 @@ void loop() {
     int oranla = map(analogokuma, 0, 1023, 0, 255); 
 
     if (butondurumu == 1) {                   // Saat yönünde dönüyor (PB1)
-        analogWrite(MotorPwm2, 0);            // 10 numaralı pini ground (toprağa) çek
-        analogWrite(MotorPwm1, oranla);       // Motorun saat yönüne dönüşü için 9 numaralı pine enerji ver
+        analogWrite(MotorPwm1, 0);            // 9 numaralı pini toprağa çek
+        analogWrite(MotorPwm2, oranla);       // 10 numaralı pine enerji ver
         motoryonu = 1; 
         
         if (digitalRead(Joystick_buton) == LOW) {
@@ -55,8 +55,8 @@ void loop() {
         }
     }
     else if (butondurumu == 2) {             // Saat yönünün tersinde dönüyor (PB2)
-        analogWrite(MotorPwm2, oranla);      // 10 numaralı pine enerji ver
-        analogWrite(MotorPwm1, 0);           // 9 numaralı pini toprağa çek
+        analogWrite(MotorPwm1, oranla);      // 9 numaralı pine enerji ver
+        analogWrite(MotorPwm2, 0);           // 10 numaralı pini toprağa çek
         motoryonu = 2; 
         
         if (digitalRead(Joystick_buton) == LOW) {
