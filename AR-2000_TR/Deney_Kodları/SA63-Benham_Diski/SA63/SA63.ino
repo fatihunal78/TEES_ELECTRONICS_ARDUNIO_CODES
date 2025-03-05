@@ -44,12 +44,12 @@ void loop() {
     int oranla = map(analogokuma, 0, 1023, 0, 150);
 
     if (butondurumu == 1) {
-        analogWrite(MotorPwm1, oranla);   // Motorun saat yönüne dönüşü için 9 numaralı pine enerji ver 
-        analogWrite(MotorPwm2, 0);        // 10 numaralı pini ground (toprağa) çek
+        analogWrite(MotorPwm2, 0);        // 10 numaralı pini toprağa çek (saat yönünde dönüş için)
+        analogWrite(MotorPwm1, oranla);   // 9 numaralı pine enerji ver
     }
     else if (butondurumu == 2) {       
-        analogWrite(MotorPwm1, 0);        // Motorun saat yönünün tersine dönüşü için 9 numaralı pini toprağa çek 
-        analogWrite(MotorPwm2, oranla);   // 10 numaralı pine enerji ver     
+        analogWrite(MotorPwm2, oranla);   // 10 numaralı pine enerji ver (saat yönünün tersine dönüş için)
+        analogWrite(MotorPwm1, 0);        // 9 numaralı pini toprağa çek
     }
     else {                                // Motoru durdur
         analogWrite(MotorPwm1, 0);      

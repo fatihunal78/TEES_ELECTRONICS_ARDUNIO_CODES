@@ -42,22 +42,21 @@ void loop() {
         butondurumu = 3;                       // butondurumu değişkenini 3 yap
     }
     
-    analogokuma = analogRead(PotPin);          // analogokuma değişkenine analog A0 pininden okunan değeri kaydet 
-    int oranla = map(analogokuma, 0, 1023, 0, 255); // Analog pinden okunan 0 ile 1023 arasındaki değeri 0 ile 255 
-                                                    // arasında oranla
+    analogokuma = analogRead(PotPin);          
+    int oranla = map(analogokuma, 0, 1023, 0, 255); 
 
-    if (butondurumu == 1) {                   // Saat yönünde dönüyor
-        analogWrite(MotorPwm1, oranla);       // Motorun saat yönüne dönüşü için 9 numaralı pine enerji ver 
+    if (butondurumu == 1) {                   // Saat yönünde dönüyor (PB1)
         analogWrite(MotorPwm2, 0);            // 10 numaralı pini ground (toprağa) çek
+        analogWrite(MotorPwm1, oranla);       // Motorun saat yönüne dönüşü için 9 numaralı pine enerji ver
         motoryonu = 1; 
         
         if (digitalRead(Joystick_buton) == LOW) {
             butondurumu = 3; 
         }
     }
-    else if (butondurumu == 2) {             // Saat yönünün tersinde dönüyor 
-        analogWrite(MotorPwm1, 0);           // Motorun saat yönünün tersine dönüşü için 9 numaralı pini toprağa çek
-        analogWrite(MotorPwm2, oranla);      // 10 numaralı pine enerji ver 
+    else if (butondurumu == 2) {             // Saat yönünün tersinde dönüyor (PB2)
+        analogWrite(MotorPwm2, oranla);      // 10 numaralı pine enerji ver
+        analogWrite(MotorPwm1, 0);           // 9 numaralı pini toprağa çek
         motoryonu = 2; 
         
         if (digitalRead(Joystick_buton) == LOW) {

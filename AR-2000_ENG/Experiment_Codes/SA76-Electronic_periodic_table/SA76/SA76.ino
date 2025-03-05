@@ -55,9 +55,9 @@ void loop() {
       if(pressedKey) {                      //If any key is pressed
         Atomic_Number_char[i]=pressedKey;    //Save the pressed key to the Atomic_Number_char[i] variable
         lcd.setCursor(0,0);                  //Go to the first row on the LCD display
-        lcd.print("Atomic Number: ");        //Write "Atomic Number:" on the LCD display 
-        //Go to column 9+i on first row of LCD display. If i=0 go to column 9, if i=1 go to column 10
-        lcd.setCursor(9+i, 0);              
+        lcd.print("Atomic No:");              //Write "Atomic No:" on the LCD display 
+        //Go to column 10+i on first row of LCD display. If i=0 go to column 10, if i=1 go to column 11
+        lcd.setCursor(10+i, 0);              
         lcd.print(Atomic_Number_char[i]);    //Print the values entered from the keypad to the LCD display.
         if(i > 2) i = 0;                     //If i is greater than 2, set i to 0
         i++;                                 //Increment i value by one
@@ -203,8 +203,8 @@ void loop() {
 
 void printValue(double massNumber) {
   lcd.setCursor(0, 1);
-  lcd.print("AN:");
+  lcd.print("A:");
   lcd.print(Atomic_Number);
-  lcd.print(" KN:");
+  lcd.print(" M:");
   lcd.print(massNumber);
 }

@@ -7,7 +7,7 @@ int buzzerPin = 11;                                  //Define the pin to which t
 #define triggerPin 4                                 //Define the pin to which the HC-SR04 Trigger leg is connected
 #define echoPin 5                                    //Define the pin to which the HC-SR04 Echo pin is connected
 
-int red_LED = 12;                                    //Define the pin to which the red LED on the Traffic Module is connected
+int red_LED = 8;                                    //Define the pin to which the red LED on the Traffic Module is connected
 int yellow_LED = 9;                                  //Define the pin to which the yellow LED on the Traffic Module is connected
 int green_LED = 10;                                  //Define the pin to which the green LED on the Traffic Module is connected
 

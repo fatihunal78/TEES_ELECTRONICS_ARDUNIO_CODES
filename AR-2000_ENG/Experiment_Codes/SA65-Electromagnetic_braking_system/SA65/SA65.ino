@@ -41,21 +41,21 @@ void loop() {
         buttonStatus = 3;                      //Set the buttonStatus variable to 3
     }
     
-    potValue = analogRead(PotPin);          //Save value read from analog A0 pin to potValue variable 
-    int proportion = map(potValue, 0, 1023, 0, 255); //Proportion the value between 0 and 1023 read from the analog pin to between 0 and 255
+    potValue = analogRead(PotPin);          
+    int proportion = map(potValue, 0, 1023, 0, 255); 
 
-    if(buttonStatus == 1) {                //If it is rotating clockwise
-        analogWrite(MotorPwm1, proportion); //Energize pin 9 for clockwise rotation of the motor 
+    if(buttonStatus == 1) {                //If PB1 is pressed - clockwise rotation
         analogWrite(MotorPwm2, 0);         //Pull pin 10 to ground
+        analogWrite(MotorPwm1, proportion); //Energize pin 9 for clockwise rotation
         motorDirection = 1; 
         
         if(digitalRead(Joystick_button) == LOW) {
             buttonStatus = 3; 
         }
     }
-    else if(buttonStatus == 2) {           //If it is rotating counterclockwise 
-        analogWrite(MotorPwm1, 0);         //Pull pin 9 to ground for counterclockwise rotation of the motor 
-        analogWrite(MotorPwm2, proportion); //Energize pin 10 
+    else if(buttonStatus == 2) {           //If PB2 is pressed - counterclockwise rotation
+        analogWrite(MotorPwm2, proportion); //Energize pin 10 for counterclockwise rotation
+        analogWrite(MotorPwm1, 0);         //Pull pin 9 to ground
         motorDirection = 2; 
         
         if(digitalRead(Joystick_button) == LOW) {
